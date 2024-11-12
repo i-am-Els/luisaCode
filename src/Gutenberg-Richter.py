@@ -14,6 +14,10 @@ import collections
 Daten = pd.read_csv('Eifel_katalog.txt', sep = '\s+')
 cols = Daten.keys()
 Daten.index.droplevel(level=0)
+
+for y in cols:
+    print(y)
+
 Daten = Daten.reset_index()
 Daten.drop(Daten.columns[[0,-4,-1]],axis=1,inplace=True)
 Daten.columns = cols[1:]
